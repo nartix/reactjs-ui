@@ -1,0 +1,33 @@
+# Stage 1: Build the Angular app
+# Use NodeJS as the base image
+FROM node:20.6-alpine3.17
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Angular app to the container
+COPY /reactjs/portfolio .
+
+# Install the required dependencies, with --legacy-peer-deps to avoid compatibility error
+# RUN npm install --legacy-peer-deps
+RUN npm install --force
+
+# Build the Angular app
+# RUN npm run build --omit=dev
+RUN npm run build 
+
+# Stage 2: Serve the Angular app with Nginx
+# Use Nginx as the base image
+FROM nginx:1.23.2
+
+# Copy the Nginx configuration file
+COPY /reactjs/portfolio/reactjs-nginx.conf /etc/nginx/nginx.conf
+
+# Copy the built app from the previous stage
+COPY --from=0 /app/build /usr/share/nginx/html
+
+# Expose port 80 to the host
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,38 @@
+name: Deploy ReactJS to ECR
+
+on:
+  push:
+    branches: [reactjs-docker]
+
+jobs:
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          ref: reactjs-docker
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: portfolio-reactjs
+          # IMAGE_TAG: release_image
+        run: |
+          sed -i "s|EXPRESSJS_URL: .*|EXPRESSJS_URL: \"$(head -n 1 API-URL)\",|" reactjs/portfolio/src/globals.js
+          export IMAGE_TAG=$(date '+%Y.%m.%d.%N')
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f reactjs/Dockerfile.prod
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
