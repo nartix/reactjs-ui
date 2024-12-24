@@ -48,5 +48,5 @@ jobs:
           ECR_REPOSITORY: portfolio-reactjs
           IMAGE_TAG: ${{ env.IMAGE_TAG }}
         run: |
-          docker build --no-cache -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f reactjs-ui/Dockerfile.prod
+          docker build --no-cache -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f Dockerfile.prod
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
