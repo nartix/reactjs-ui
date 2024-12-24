@@ -4,7 +4,7 @@ export const environment = {
   ANGULARJS_URL: 'https://angular.ferozfaiz.com',
   REACTJS_URL: 'https://reactjs.ferozfaiz.com',
   DJANGO_URL: 'https://django-rest-framework.ferozfaiz.com',
-  EXPRESSJS_URL: 'http://172.16.10.60:5000',
+  EXPRESSJS_URL: 'https://expressjs.ferozfaiz.com',
 };
 
 export const templateGlobals = {
@@ -22,6 +22,6 @@ export const templateGlobals = {
   linkedin: 'https://www.linkedin.com/in/feroz-faiz/',
   github: 'https://github.com/nartix/feroz',
   email: 'feroz@hotmail.ca',
-  resume: '/assets/resume/feroz-resume-v2.pdf',
+  resume: 'https://1drv.ms/f/s!Asn5wDAHILW1kbNdYaXvIEUC-lrUIQ?e=ronDfh',
   profilePicture: '/assets/images/profile-picture.png',
 };

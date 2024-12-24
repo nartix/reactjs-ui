@@ -32,7 +32,7 @@ jobs:
           ECR_REPOSITORY: portfolio-reactjs
           # IMAGE_TAG: release_image
         run: |
-          sed -i "s|EXPRESSJS_URL: .*|EXPRESSJS_URL: \"$(head -n 1 API-URL)\",|" reactjs/portfolio/src/globals.js
+          sed -i "s|EXPRESSJS_URL: .*|EXPRESSJS_URL: \"$(head -n 1 API-URL)\",|" reactjs/reactjs-ui/src/globals.js
           export IMAGE_TAG=$(date '+%Y.%m.%d.%N')
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f reactjs/Dockerfile.prod
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
