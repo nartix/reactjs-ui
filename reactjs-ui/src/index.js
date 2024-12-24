@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 
 // https://getbootstrap.com/docs/4.4/getting-started/webpack/

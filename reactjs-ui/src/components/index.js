@@ -4,7 +4,7 @@ import { useGlobalState } from '../context/global-context-use';
 
 const Index = () => {
   const [templateGlobals] = useGlobalState();
-  const { reactjs, angularjs, django_rest_framework, expressjs, redux } = templateGlobals;
+  const { reactjs, expressjs, redux } = templateGlobals;
 
   useEffect(() => {
     document.title = templateGlobals.getPageTitle() + 'Home';

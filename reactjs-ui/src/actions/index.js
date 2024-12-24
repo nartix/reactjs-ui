@@ -41,7 +41,7 @@ const fetchEmployee = (employee_id) => async (dispatch) => {
 
 const createEmployee = (formValues) => async (dispatch) => {
   try {
-    const response = await apiServer.post('/employees', formValues);
+    await apiServer.post('/employees', formValues);
   } catch (error) {
     console.error('Error creating employee:', error);
     // Additional error handling can be added here if needed

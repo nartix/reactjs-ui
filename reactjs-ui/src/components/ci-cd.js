@@ -18,7 +18,7 @@ const CiCd = () => {
         that I manage myself, using the RKE2 Kubernetes engine. I also automated the setup of this Kubernetes cluster using
         Ansible.
       </p>
-      <img src='/assets/images/ci-cd.png' className='mx-auto d-block img-fluid mb-3' alt='CI CD image' />
+      <img src='/assets/images/ci-cd.png' className='mx-auto d-block img-fluid mb-3' alt='CI CD' />
     </div>
   );
 };
