@@ -21,20 +21,20 @@ Live Demo: <a href='https://reactjs.ferozfaiz.com/'>reactjs.ferozfaiz.com</a>
 <br>
 <h3 align='center'>Home Page</h3>
 <div align='center'>
-<img src='reactjs-uipublic/assets/images/reactjs_home.png'/>
+<img src='reactjs-ui/public/assets/images/reactjs_home.png'/>
 </div>
 <br>
 <h3 align='center'>About</h3>
 <div align='center'>
-<img src='reactjs-uipublic/assets/images/reactjs_about.png'/>
+<img src='reactjs-ui/public/assets/images/reactjs_about.png'/>
 </div>
 <br>
 <h3 align='center'>Employee CRUD</h3>
 <div align='center'>
-<img src='reactjs-uipublic/assets/images/reactjs_crud.png'/>
+<img src='reactjs-ui/public/assets/images/reactjs_crud.png'/>
 </div>
 <br>
 <h3 align='center'>CI/CD</h3>
 <div align='center'>
-<img src='reactjs-uipublic/assets/images/reactjs_ci_cd.png'/>
+<img src='reactjs-ui/public/assets/images/reactjs_ci_cd.png'/>
 </div>
